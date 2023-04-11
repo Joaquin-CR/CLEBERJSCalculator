@@ -1,1 +1,80 @@
-<p>calculator works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <span *ngIf="displayCalculation != ''">{{displayCalculation}}</span>
+                    <div class="display" *ngIf="answer == ''">{{displayNumber}}</div>
+                    <div class="display" *ngIf="answer != ''">{{answer}}</div>
+                    <!-- <input type="text" class="inputDisplay" disabled [(ngModel)]="displayNumber"> -->
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clear()">C</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="deleteByOne()"><i class="fa-solid fa-delete-left"></i></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('1')">1</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('2')">2</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('3')">3</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('+')"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('4')">4</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('5')">5</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('6')">6</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('-')"><i class="fa-solid fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('7')">7</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('8')">8</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('9')">9</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('/')"><i class="fa-solid fa-divide"></i></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('.')">.</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('0')">0</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" (click)="clickNumberBtn('*')"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-danger" (click)="evaluate()"><i class="fa-solid fa-equals"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
