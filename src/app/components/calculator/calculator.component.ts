@@ -49,27 +49,6 @@ export class CalculatorComponent implements OnInit {
   evaluate() {
     this.displayCalculation += this.displayNumber;
     this.answer = eval(this.displayCalculation);
-    console.log(this.answer);
     this.displayNumber = '0';
   }
-
-  ////
-  // displayValue = '';
-
-
-  // handleInput(value: string) {
-  //   if (value === '+' || value === '-' || value === '*' || value === '/') {
-  //     this.calculation += this.displayValue + value;
-  //     this.displayValue = '';
-  //   } else {
-  //     this.displayValue += value;
-  //   }
-  // }
-
-  // calculate() {
-  //   this.calculation += this.displayValue;
-  //   this.displayValue = eval(this.calculation);
-  //   this.calculation = '';
-  // }
-
 }
