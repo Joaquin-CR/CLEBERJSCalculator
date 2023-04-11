@@ -17,7 +17,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   clickNumberBtn(num: any) {
-    if(this.answer != ''){
+    if (this.answer != '') {
       this.clear();
     }
     if ((this.displayNumber == 0 || this.displayNumber == '0') && (num != '+' && num != '-' && num != '*' && num != '/')) {
@@ -39,8 +39,8 @@ export class CalculatorComponent implements OnInit {
   }
 
   deleteByOne() {
-    if(this.displayNumber.length > 1){
-      this.displayNumber = this.displayNumber.substring(0,this.displayNumber.length - 1);
+    if (this.displayNumber.length > 1) {
+      this.displayNumber = this.displayNumber.substring(0, this.displayNumber.length - 1);
     } else {
       this.displayNumber = '0';
     }
@@ -48,7 +48,12 @@ export class CalculatorComponent implements OnInit {
 
   evaluate() {
     this.displayCalculation += this.displayNumber;
-    this.answer = eval(this.displayCalculation);
-    this.displayNumber = '0';
+    if (this.displayCalculation.includes('0') && this.displayCalculation.includes('/')) {
+      alert("No se peden realizar divisiones con 0 en su dividendo o su divisor");
+      this.clear();
+    } else {
+      this.answer = eval(this.displayCalculation);
+      this.displayNumber = '0';
+    }
   }
 }
